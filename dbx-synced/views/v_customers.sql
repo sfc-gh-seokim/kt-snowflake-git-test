@@ -1,6 +1,7 @@
 -- DBX 원본: iceberg_test.sales_ext.customers (Unity Catalog Iceberg)
 -- 변환 대상: Snowflake View로 변환 (DBX 뷰 로직 재현)
-CREATE OR ALTER VIEW ICEBERG_TEST_DB.UNITY_CATALOG.V_CUSTOMERS AS
+-- NOTE: CREATE OR REPLACE 사용 (CREATE OR ALTER는 컬럼 순서 변경 시 실패하므로)
+CREATE OR REPLACE VIEW ICEBERG_TEST_DB.UNITY_CATALOG.V_CUSTOMERS AS
 SELECT
     customer_id,
     customer_name,
