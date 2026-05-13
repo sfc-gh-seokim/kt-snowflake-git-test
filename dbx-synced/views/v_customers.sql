@@ -5,8 +5,8 @@ SELECT
     customer_id,
     customer_name,
     email,
-    -- DBX에서는 COALESCE(segment, 'UNKNOWN')으로 처리하던 로직
-    COALESCE(segment, 'UNKNOWN') AS customer_segment,
-    created_date
+    COALESCE(region, 'UNKNOWN') AS customer_region,
+    signup_date,
+    lifetime_value
 FROM ICEBERG_TEST_DB.UNITY_CATALOG.CUSTOMERS_FROM_DATABRICKS
 WHERE customer_id IS NOT NULL;
