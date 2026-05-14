@@ -1,0 +1,7 @@
+--!jinja
+
+DEFINE ROLE KT_CICD{{ env_suffix }}_READER;
+
+GRANT USAGE ON DATABASE KT_CICD{{ env_suffix }}_DB TO ROLE KT_CICD{{ env_suffix }}_READER;
+GRANT USAGE ON SCHEMA KT_CICD{{ env_suffix }}_DB.ANALYTICS TO ROLE KT_CICD{{ env_suffix }}_READER;
+GRANT SELECT ON ALL VIEWS IN SCHEMA KT_CICD{{ env_suffix }}_DB.ANALYTICS TO ROLE KT_CICD{{ env_suffix }}_READER;
