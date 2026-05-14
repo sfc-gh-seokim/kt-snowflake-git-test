@@ -1,0 +1,35 @@
+manifest_version: 2
+
+type: DCM_PROJECT
+
+default_target: DEV
+
+targets:
+  DEV:
+    account_identifier: SFCSUPPORT-KOREA_AZURE_KT
+    project_name: ICEBERG_TEST_DB.META.KT_CICD_TEST_PROJECT
+    project_owner: ACCOUNTADMIN
+    templating_config: DEV
+
+  PRD:
+    account_identifier: SFCSUPPORT-KOREA_AZURE_KT
+    project_name: ICEBERG_TEST_DB.META.KT_CICD_PRD_PROJECT
+    project_owner: ACCOUNTADMIN
+    templating_config: PRD
+
+templating:
+  defaults:
+    env_suffix: _DEV
+    wh_size: XSMALL
+    auto_suspend: 60
+
+  configurations:
+    DEV:
+      env_suffix: _DEV
+      wh_size: XSMALL
+      auto_suspend: 60
+
+    PRD:
+      env_suffix: _PRD
+      wh_size: MEDIUM
+      auto_suspend: 300
